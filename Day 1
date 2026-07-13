@@ -1,0 +1,86 @@
+Question 1
+ Write a program to calulate sum of first N natural numbers.
+  #include <stdio.h>
+int main() {
+    int N, sum = 0;
+
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        sum += i;
+    }
+
+    printf("Sum of first %d natural numbers = %d\n", N, sum);
+
+    return 0;
+}
+Question 2
+  Write a program to print multiplication table of a even number.
+  #include <stdio.h>
+
+int main() {
+    int num, i;
+
+    printf("Enter an even number: ");
+    scanf("%d", &num);
+
+    if (num % 2 != 0) {
+        printf("The entered number is not even.\n");
+    } else {
+        printf("Multiplication Table of %d:\n", num);
+
+        for (i = 1; i <= 10; i++) {
+            printf("%d x %d = %d\n", num, i, num * i);
+        }
+    }
+
+    return 0;
+}
+Question 3
+ Write a program to find factorial of a number.
+ #include <stdio.h>
+
+int main() {
+    int num, i;
+    long long factorial = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial of a negative number does not exist.\n");
+    } else {
+        for (i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        printf("Factorial of %d = %lld\n", num, factorial);
+    }
+
+    return 0;
+}
+Question 4
+ Write  a program to count digits in a number.
+  #include <stdio.h>
+
+int main() {
+    int num, count = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num == 0) {
+        count = 1;
+    } else {
+        while (num != 0) {
+            num = num / 10;
+            count++;
+        }
+    }
+
+    printf("Number of digits = %d\n", count);
+
+    return 0;
+}
+
