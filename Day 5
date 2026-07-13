@@ -1,0 +1,104 @@
+Question 17 
+Write a program to check perfect number.
+#include <stdio.h>
+
+int main() {
+    int num, i, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    for (i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    if (sum == num)
+        printf("%d is a Perfect Number.\n", num);
+    else
+        printf("%d is not a Perfect Number.\n", num);
+
+    return 0;
+}
+Question 18
+Write a program to check strong number.
+#include <stdio.h>
+
+int main() {
+    int num, original, digit, i;
+    int sum = 0, factorial;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    while (num != 0) {
+        digit = num % 10;
+        factorial = 1;
+
+        for (i = 1; i <= digit; i++) {
+            factorial *= i;
+        }
+
+        sum += factorial;
+        num /= 10;
+    }
+
+    if (sum == original)
+        printf("%d is a Strong Number.\n", original);
+    else
+        printf("%d is not a Strong Number.\n", original);
+
+    return 0;
+}
+Question 19
+Write a program to print factor of a number.
+#include <stdio.h>
+
+int main() {
+    int num, i;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Factors of %d are:\n", num);
+
+    for (i = 1; i <= num; i++) {
+        if (num % i == 0) {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
+Question 20 
+Write a program to find largest prime factor.
+#include <stdio.h>
+
+int main() {
+    int num, largestPrimeFactor = 0, i;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num % 2 == 0) {
+        largestPrimeFactor = 2;
+        num /= 2;
+    }
+
+    for (i = 3; i * i <= num; i += 2) {
+        while (num % i == 0) {
+            largestPrimeFactor = i;
+            num /= i;
+        }
+    }
+
+    if (num > 2)
+        largestPrimeFactor = num;
+
+    printf("Largest Prime Factor = %d\n", largestPrimeFactor);
+
+    return 0;
+}
