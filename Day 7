@@ -1,0 +1,101 @@
+Question 25
+ Write a program to Recursive factorial.
+#include <stdio.h>
+
+// Function to calculate factorial recursively
+long long factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial of a negative number does not exist.\n");
+    } else {
+        printf("Factorial of %d = %lld\n", num, factorial(num));
+    }
+
+    return 0;
+}
+Question 26 
+Write a program to Recursive fibonacci.
+#include <stdio.h>
+
+// Function to find Fibonacci term recursively
+int fibonacci(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n, i;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series:\n");
+
+    for (i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+
+    return 0;
+}
+Question 27 
+Write a program to recursive sum of digits.
+#include <stdio.h>
+
+// Function to calculate sum of digits recursively
+int sumOfDigits(int num) {
+    if (num == 0)
+        return 0;
+    else
+        return (num % 10) + sumOfDigits(num / 10);
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Sum of digits = %d\n", sumOfDigits(num));
+
+    return 0;
+}
+ Question 28
+ Write a program to Recursive reverse number.
+#include <stdio.h>
+
+int reverse = 0;
+
+// Function to reverse the number recursively
+int reverseNumber(int num) {
+    if (num == 0)
+        return reverse;
+
+    reverse = reverse * 10 + (num % 10);
+    return reverseNumber(num / 10);
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Reversed number = %d\n", reverseNumber(num));
+
+    return 0;
+}
