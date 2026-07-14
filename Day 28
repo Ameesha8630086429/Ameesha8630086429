@@ -1,0 +1,252 @@
+Question 113
+Write a program to Create menu-driven calculator
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float num1, num2, result;
+
+    do {
+        printf("\n===== MENU-DRIVEN CALCULATOR =====\n");
+        printf("1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Multiplication\n");
+        printf("4. Division\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter two numbers: ");
+                scanf("%f %f", &num1, &num2);
+                result = num1 + num2;
+                printf("Result = %.2f\n", result);
+                break;
+
+            case 2:
+                printf("Enter two numbers: ");
+                scanf("%f %f", &num1, &num2);
+                result = num1 - num2;
+                printf("Result = %.2f\n", result);
+                break;
+
+            case 3:
+                printf("Enter two numbers: ");
+                scanf("%f %f", &num1, &num2);
+                result = num1 * num2;
+                printf("Result = %.2f\n", result);
+                break;
+
+            case 4:
+                printf("Enter two numbers: ");
+                scanf("%f %f", &num1, &num2);
+
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    printf("Result = %.2f\n", result);
+                } else {
+                    printf("Error! Division by zero is not allowed.\n");
+                }
+                break;
+
+            case 5:
+                printf("Exiting Calculator...\n");
+                break;
+
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
+Question 114
+Write a program to Create menu-driven array operations system
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, choice;
+    int sum, largest, smallest;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    do {
+        printf("\n===== ARRAY OPERATIONS MENU =====\n");
+        printf("1. Display Array\n");
+        printf("2. Sum of Elements\n");
+        printf("3. Find Largest Element\n");
+        printf("4. Find Smallest Element\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Array Elements: ");
+                for (i = 0; i < n; i++)
+                    printf("%d ", arr[i]);
+                printf("\n");
+                break;
+
+            case 2:
+                sum = 0;
+                for (i = 0; i < n; i++)
+                    sum += arr[i];
+                printf("Sum = %d\n", sum);
+                break;
+
+            case 3:
+                largest = arr[0];
+                for (i = 1; i < n; i++) {
+                    if (arr[i] > largest)
+                        largest = arr[i];
+                }
+                printf("Largest Element = %d\n", largest);
+                break;
+
+            case 4:
+                smallest = arr[0];
+                for (i = 1; i < n; i++) {
+                    if (arr[i] < smallest)
+                        smallest = arr[i];
+                }
+                printf("Smallest Element = %d\n", smallest);
+                break;
+
+            case 5:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
+Question 115
+Write a program to Create menu-driven string operations system
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], rev[100];
+    int choice, i, len;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    do {
+        printf("\n===== STRING OPERATIONS MENU =====\n");
+        printf("1. Find Length\n");
+        printf("2. Reverse String\n");
+        printf("3. Convert to Uppercase\n");
+        printf("4. Check Palindrome\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                len = strlen(str);
+                printf("Length = %d\n", len);
+                break;
+
+            case 2:
+                len = strlen(str);
+                for (i = 0; i < len; i++)
+                    rev[i] = str[len - 1 - i];
+                rev[len] = '\0';
+                printf("Reversed String = %s\n", rev);
+                break;
+
+            case 3:
+                for (i = 0; str[i] != '\0'; i++) {
+                    if (str[i] >= 'a' && str[i] <= 'z')
+                        str[i] = str[i] - 32;
+                }
+                printf("Uppercase String = %s\n", str);
+                break;
+
+            case 4:
+                len = strlen(str);
+                for (i = 0; i < len / 2; i++) {
+                    if (str[i] != str[len - 1 - i]) {
+                        printf("String is Not Palindrome\n");
+                        break;
+                    }
+                }
+                if (i == len / 2)
+                    printf("String is Palindrome\n");
+                break;
+
+            case 5:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
+Question 116
+Write a program to Create inventory management system
+#include <stdio.h>
+
+struct Item {
+    int id;
+    char name[50];
+    int quantity;
+    float price;
+};
+
+int main() {
+    struct Item item[100];
+    int n, i;
+
+    printf("Enter the number of items: ");
+    scanf("%d", &n);
+
+    // Input item details
+    for (i = 0; i < n; i++) {
+        printf("\nEnter details of Item %d:\n", i + 1);
+
+        printf("Item ID: ");
+        scanf("%d", &item[i].id);
+
+        printf("Item Name: ");
+        scanf("%s", item[i].name);
+
+        printf("Quantity: ");
+        scanf("%d", &item[i].quantity);
+
+        printf("Price: ");
+        scanf("%f", &item[i].price);
+    }
+
+    // Display inventory
+    printf("\n========== INVENTORY ==========\n");
+    printf("ID\tName\tQuantity\tPrice\n");
+
+    for (i = 0; i < n; i++) {
+        printf("%d\t%s\t%d\t\t%.2f\n",
+               item[i].id,
+               item[i].name,
+               item[i].quantity,
+               item[i].price);
+    }
+
+    return 0;
+}
