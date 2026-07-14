@@ -1,0 +1,92 @@
+Question 81
+Write a program to Find string length without strlen().
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    while (str[i] != '\0') {
+        i++;
+    }
+
+    printf("Length of the string = %d\n", i);
+
+    return 0;
+}
+Question 82
+	Write a program to Reverse a string.
+#include <stdio.h>
+
+int main() {
+    char str[100], rev[100];
+    int i, j, len = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Find length of string
+    while (str[len] != '\0') {
+        len++;
+    }
+
+    // Reverse the string
+    for (i = len - 1, j = 0; i >= 0; i--, j++) {
+        rev[j] = str[i];
+    }
+    rev[j] = '\0';
+
+    printf("Reversed string: %s\n", rev);
+
+    return 0;
+}
+Question 83
+Write a program to Count vowels and consonants.
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i, vowels = 0, consonants = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for (i = 0; str[i] != '\0'; i++) {
+        if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')) {
+            if (str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U' ||
+                str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')
+                vowels++;
+            else
+                consonants++;
+        }
+    }
+
+    printf("Number of vowels = %d\n", vowels);
+    printf("Number of consonants = %d\n", consonants);
+
+    return 0;
+}
+Question 84
+Write a program to Convert lowercase to uppercase
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32;
+        }
+    }
+
+    printf("Uppercase string: %s\n", str);
+
+    return 0;
+}
