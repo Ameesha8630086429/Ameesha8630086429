@@ -1,0 +1,146 @@
+Question 73
+Write a program to Add matrices
+#include <stdio.h>
+
+int main() {
+    int a[10][10], b[10][10], sum[10][10];
+    int rows, cols, i, j;
+
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    printf("Enter elements of first matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter elements of second matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Add the matrices
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    printf("Sum of the matrices:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+Question 74
+Write a program to Subtract matrices
+#include <stdio.h>
+
+int main() {
+    int a[10][10], b[10][10], sub[10][10];
+    int rows, cols, i, j;
+
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    printf("Enter elements of first matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter elements of second matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Subtract the matrices
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            sub[i][j] = a[i][j] - b[i][j];
+        }
+    }
+
+    printf("Difference of the matrices:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%d ", sub[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+Question 75
+Write a program to Transpose matrix
+#include <stdio.h>
+
+int main() {
+    int a[10][10], transpose[10][10];
+    int rows, cols, i, j;
+
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    printf("Enter the elements of the matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Find transpose
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            transpose[j][i] = a[i][j];
+        }
+    }
+
+    printf("Transpose of the matrix:\n");
+    for (i = 0; i < cols; i++) {
+        for (j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+Question 76
+Write a program to Find diagonal sum
+#include <stdio.h>
+
+int main() {
+    int a[10][10];
+    int n, i, j, sum = 0;
+
+    printf("Enter the order of the square matrix: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements of the matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Find sum of main diagonal
+    for (i = 0; i < n; i++) {
+        sum += a[i][i];
+    }
+
+    printf("Sum of main diagonal elements = %d\n", sum);
+
+    return 0;
+}
