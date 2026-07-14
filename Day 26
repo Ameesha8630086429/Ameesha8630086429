@@ -1,0 +1,162 @@
+Question 101
+Write a program to Create number guessing game
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int number, guess, attempts = 0;
+
+    // Generate random number between 1 and 100
+    srand(time(0));
+    number = rand() % 100 + 1;
+
+    printf("=== Number Guessing Game ===\n");
+    printf("Guess a number between 1 and 100.\n");
+
+    do {
+        printf("Enter your guess: ");
+        scanf("%d", &guess);
+        attempts++;
+
+        if (guess > number)
+            printf("Too High!\n");
+        else if (guess < number)
+            printf("Too Low!\n");
+        else
+            printf("Congratulations! You guessed the number in %d attempts.\n", attempts);
+
+    } while (guess != number);
+
+    return 0;
+}
+Question 102
+	Write a program to Create voting eligibility system.
+#include <stdio.h>
+
+int main() {
+    int age;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if (age >= 18)
+        printf("You are eligible to vote.\n");
+    else
+        printf("You are not eligible to vote.\n");
+
+    return 0;
+}
+Question 103
+Write a program to Create ATM simulation
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float balance = 1000.0, amount;
+
+    do {
+        printf("\n===== ATM MENU =====\n");
+        printf("1. Check Balance\n");
+        printf("2. Deposit Money\n");
+        printf("3. Withdraw Money\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Current Balance: Rs. %.2f\n", balance);
+                break;
+
+            case 2:
+                printf("Enter amount to deposit: ");
+                scanf("%f", &amount);
+
+                if (amount > 0) {
+                    balance += amount;
+                    printf("Deposit successful.\n");
+                    printf("Updated Balance: Rs. %.2f\n", balance);
+                } else {
+                    printf("Invalid amount!\n");
+                }
+                break;
+
+            case 3:
+                printf("Enter amount to withdraw: ");
+                scanf("%f", &amount);
+
+                if (amount <= 0) {
+                    printf("Invalid amount!\n");
+                } else if (amount > balance) {
+                    printf("Insufficient balance!\n");
+                } else {
+                    balance -= amount;
+                    printf("Withdrawal successful.\n");
+                    printf("Remaining Balance: Rs. %.2f\n", balance);
+                }
+                break;
+
+            case 4:
+                printf("Thank you for using the ATM.\n");
+                break;
+
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}
+Question 104
+Write a program to Create quiz applicatio
+#include <stdio.h>
+
+int main() {
+    int choice, score = 0;
+
+    printf("******** QUIZ APPLICATION ********\n\n");
+
+    // Question 1
+    printf("Q1. What is the capital of India?\n");
+    printf("1. Mumbai\n2. New Delhi\n3. Kolkata\n4. Chennai\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 2)
+        score++;
+
+    // Question 2
+    printf("\nQ2. Which of the following is a programming language?\n");
+    printf("1. HTML\n2. C\n3. SQL\n4. XML\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 2)
+        score++;
+
+    // Question 3
+    printf("\nQ3. How many bits are there in one byte?\n");
+    printf("1. 4\n2. 8\n3. 16\n4. 32\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 2)
+        score++;
+
+    // Display Score
+    printf("\n******** RESULT ********\n");
+    printf("Your Score = %d out of 3\n", score);
+
+    if (score == 3)
+        printf("Excellent!\n");
+    else if (score == 2)
+        printf("Good Job!\n");
+    else if (score == 1)
+        printf("Fair! Keep Practicing.\n");
+    else
+        printf("Better Luck Next Time!\n");
+
+    return 0;
+}
